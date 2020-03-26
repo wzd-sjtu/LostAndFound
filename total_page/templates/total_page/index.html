@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<body>
-        <h1>Wu says...</h1>
-        hello world! <br />
-        <a href="/lost/">lost_page</a><br />
-        <a href="/found/">found_page</a><br />
-    </body>
+        {% if user.is_authenticated %}
+                <h1>Wu says...</h1>
+                hello world! <br />
+                <a href="/lost/">lost_page</a><br />
+                <a href="/found/">found_page</a><br />
+
+        </br>
+
+                <a href="/total_page/restricted/">Restricted Page</a><br />
+                <a href="/total_page/logout/">Logout</a><br />
+        {% else %}
+            <h1>Wu says...</h1>
+                hello world! <br />
+                If you want to se things , please login. <br />
+            <a href="/total_page/login/">Login</a><br />
+            <a href="/total_page/restricted/">Restricted Page</a><br />
+        {% endif %}
+</br>
 </body>
 </html>

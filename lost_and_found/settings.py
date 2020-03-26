@@ -27,6 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Default password hashers
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+]
+
+
 
 # Application definition
 
@@ -128,3 +138,5 @@ STATIC_URL = '/static/'   #这个应该已经有了
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
+LOGIN_URL = '/total_page/login/'
