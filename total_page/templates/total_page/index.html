@@ -1,10 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+{% block body_block %}
+    <br/><br/><br/><br/><br/><br/>
         {% if user.is_authenticated %}
                 <h1>Wu says...</h1>
                 hello world! <br />
@@ -14,14 +12,11 @@
         </br>
 
                 <a href="/total_page/restricted/">Restricted Page</a><br />
-                <a href="/total_page/logout/">Logout</a><br />
         {% else %}
             <h1>Wu says...</h1>
                 hello world! <br />
-                If you want to se things , please login. <br />
-            <a href="/total_page/login/">Login</a><br />
+                If you want to se things , please LOGIN. <br />
             <a href="/total_page/restricted/">Restricted Page</a><br />
         {% endif %}
 </br>
-</body>
-</html>
+{% endblock %}

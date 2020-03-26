@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+{% block body_block %}
+<br /><br /> <br /> <br /> <br />
  <h1>Lost says...</h1>
         hello world!<br />
 
@@ -24,5 +21,4 @@
         <li><a href="/lost/add_kind/">Add a New Kind</a></li>
         <a href="/lost/about/">About</a><br />
 
-</body>
-</html>
+{% endblock %}

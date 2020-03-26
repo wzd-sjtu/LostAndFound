@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+<br /><br /> <br /> <br /> <br />
 <form id="kind_form" method="post" action="/lost/add_kind/">
 
             {% csrf_token %}
@@ -20,5 +18,4 @@
 
             <input type="submit" name="submit" value="Create Kind" />
         </form>
-</body>
-</html>
+{% endblock %}

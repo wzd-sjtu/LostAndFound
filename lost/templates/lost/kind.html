@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+
+{% block body_block %}
+<br /><br /> <br /> <br /> <br />
 {% if kind %}
         <h1>{{ kind_name }}</h1>
             {% if pages %}
@@ -22,5 +20,5 @@
 
 
         <a href="{% url 'add_page' kind.slug %}" >Add a New Page</a>
-</body>
-</html>
+
+{% endblock %}
