@@ -56,22 +56,43 @@
         <span class="sr-only">Next</span>
       </a>
 
+            {% if user.is_authenticated %}
+                  <hr class="featurette-divider">
 
-    </div><!-- /.carousel -->
-        {% if user.is_authenticated %}
-                <h1>Wu says...</h1>
-                hello world! <br />
-                <a href="/lost/">lost_page</a><br />
-                <a href="/found/">found_page</a><br />
+                  <div class="row featurette">
+                    <div class="col-md-7">
+                        <a href="/found/"><h2 class="featurette-heading">Lost Corner<span class="text-muted">  <br/> I lost something.</span></h2></a>>
+                      <p class="lead">Welcome to show your demand.</p>
+                    </div>
+                    <div class="col-md-5">
+                      <img src="{% static "images/11.jpg" %}" alt="Picture of Django" />
+                    </div>
+                  </div>
 
-        </br>
 
-                <a href="/total_page/restricted/">Restricted Page</a><br />
-        {% else %}
-            <h1>Wu says...</h1>
-                hello world! <br />
-                If you want to se things , please LOGIN. <br />
+                  <div class="row featurette">
+                    <div class="col-md-7 col-md-push-5">
+                        <a href="/found/"><h2 class="featurette-heading">Found Corner <span class="text-muted"> <br/> I found something. </span></h2></a>>
+                      <p class="lead">Welcome to help each other.</p>
+                    </div>
+                    <div class="col-md-5 col-md-pull-7">
+                     <img src="{% static "images/12.jpg" %}" alt="Picture of Django" />
+                    </div>
+                  </div>
+            {% else %}
+                <hr class="featurette-divider">
+
+                  <div class="row featurette">
+                    <div class="col-md-7 col-md-push-5">
+                        <a href="login/"><h2 class="featurette-heading">LOGIN IN </h2></a>>
+                      <p class="lead">If you want to se things , please LOGIN.</p>
+                    </div>
+                    <div class="col-md-5 col-md-pull-7">
+                     <img src="{% static "images/12.jpg" %}" alt="Picture of Django" />
+                    </div>
+                  </div>
+
             <a href="/total_page/restricted/">Restricted Page</a><br />
         {% endif %}
-</br>
+    </div>>
 {% endblock %}
