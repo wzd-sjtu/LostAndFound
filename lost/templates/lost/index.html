@@ -6,9 +6,23 @@
     <title>Title</title>
 </head>
 <body>
- <h1>Eva says...</h1>
-        hello world! <strong>{{ boldmessage }}</strong><br />
-        <a href="/lost/about/">About</a><br />
+ <h1>Lost says...</h1>
+        hello world!<br />
+
+         {% if kinds %}
+            <ul>
+                {% for kind in kinds %}
+                <li><a href="/lost/kind/{{ kind.slug }}">{{ kind.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}s
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
+
         <img src="{% static "images/1.PNG" %}" alt="Picture of Django" />
+        <li><a href="/lost/add_kind/">Add a New Kind</a></li>
+        <a href="/lost/about/">About</a><br />
+
 </body>
 </html>
