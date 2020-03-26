@@ -139,4 +139,4 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
-LOGIN_URL = '/total_page/login/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
