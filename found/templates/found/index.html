@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body>
+ <h1>Found says...</h1>
+        hello world!<br />
+
+         {% if kinds %}
+            <ul>
+                {% for kind in kinds %}
+                <li><a href="/found/kind/{{ kind.slug }}">{{ kind.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}s
+            <strong>There are no found_list present.</strong>
+        {% endif %}
+
+
+        <img src="{% static "images/1.PNG" %}" alt="Picture of Django" />
+        <li><a href="/found/add_kind/">Add a New Found_Kind</a></li>
+        <a href="/found/about/">About</a><br />
+
+</body>
+</body>
+</html>

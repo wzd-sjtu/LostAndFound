@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lost/', include('lost.urls')),
+    path('found/', include('found.urls')),
 ]
