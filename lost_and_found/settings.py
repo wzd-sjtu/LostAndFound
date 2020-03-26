@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lost.apps.LostConfig',
-    'found.apps.FoundConfig'
+    'found.apps.FoundConfig',
+    'total_page.apps.TotalPageConfig'
 ]
 
 MIDDLEWARE = [

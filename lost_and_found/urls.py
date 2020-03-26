@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('lost/', include('lost.urls')),
     path('found/', include('found.urls')),
+    path('total_page/', include('total_page.urls')),
 ]
