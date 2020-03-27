@@ -3,22 +3,48 @@
 
 {% block body_block %}
 <br /><br /> <br /> <br /> <br />
- <h1>Lost says...</h1>
-        hello world!<br />
+ <h1 align="center">Lost says...</h1>
 
-         {% if kinds %}
-            <ul>
+
+    <div class="container">
+            <div class="row clearfix">
                 {% for kind in kinds %}
-                <li><a href="/lost/kind/{{ kind.slug }}">{{ kind.name }}</a></li>
-                {% endfor %}
-            </ul>
-        {% else %}s
-            <strong>There are no categories present.</strong>
-        {% endif %}
+                <div class="col-md-4 column">
+                    <li><font size="5"><a href="/lost/kind/{{ kind.slug }}">{{ kind.name }}</a></li>
+                </div>
+                 {% endfor %}
+            </div>
 
+        </div>
 
-        <img src="{% static "images/1.PNG" %}" alt="Picture of Django" />
-        <li><a href="/lost/add_kind/">Add a New Kind</a></li>
-        <a href="/lost/about/">About</a><br />
+    <div style="text-align:center"> <img src="{% static "images/1.PNG" %}"  alt="Picture of Django" /></div>
+        <li align="center" ><a href="/lost/add_kind/">Add a New Kind</a></li>
+    <div align="center" class="row clearfix">
+                <div class="col-md-12 column">
+                    <ul class="pagination">
+                        <li>
+                             <a href="#">Prev</a>
+                        </li>
+                        <li>
+                             <a href="#">1</a>
+                        </li>
+                        <li>
+                             <a href="#">2</a>
+                        </li>
+                        <li>
+                             <a href="#">3</a>
+                        </li>
+                        <li>
+                             <a href="#">4</a>
+                        </li>
+                        <li>
+                             <a href="#">5</a>
+                        </li>
+                        <li>
+                             <a href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 {% endblock %}

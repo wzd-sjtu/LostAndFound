@@ -4,6 +4,17 @@ from lost.forms import KindLForm,PageLForm
 # Create your views here.
 from django.http import HttpResponse
 
+from django.shortcuts import render
+from total_page.forms import UserForm, UserProfileForm
+# Create your views here.
+from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib.auth import authenticate, login,logout
+
+from django.contrib.auth.decorators import login_required
+
+
+
+
 def index(request):
     kinds_list = KindL.objects.order_by('-likes')[:]
     context_dict = {'kinds': kinds_list}
@@ -70,3 +81,8 @@ def add_page(request,kind_name_slug=None):
     return render(request, 'lost/add_page.html', context_dict)
 
 #   views是进行二者之间的连接而生成的  某种程度上是可以接受的
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/total_page/')

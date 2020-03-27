@@ -3,22 +3,55 @@
 
 {% block body_block %}
 <br /><br /> <br /> <br /> <br />
-{% if kind %}
-        <h1>{{ kind_name }}</h1>
-            {% if pages %}
-            <ul>
+
+
+
+
+     {% if kind %}
+        <h1 align="center">{{ kind_name }}</h1>
+    {% endif %}
+    <div align="center" class="container">
+            <div class="row clearfix">
                 {% for page in pages %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            </ul>
-            {% else %}
-                <strong>No pages currently in category.</strong>
-            {% endif %}
-        {% else %}
-            The specified category {{ category_name }} does not exist!
-        {% endif %}
+                <div class="col-md-4 column">
+                    <li><font size="5"><a href="{{ page.url }}">{{ page.title }}</a></li>
+                </div>
+                 {% endfor %}
+            </div>
+
+        </div>
 
 
-        <a href="{% url 'add_page' kind.slug %}" >Add a New Page</a>
+    <li  align="center" ><a  href="{% url 'add_page' kind.slug %}" >Add a New Page</a></li>
+
+
+
+     <div align="center" class="row clearfix">
+                <div class="col-md-12 column">
+                    <ul class="pagination">
+                        <li>
+                             <a href="#">Prev</a>
+                        </li>
+                        <li>
+                             <a href="#">1</a>
+                        </li>
+                        <li>
+                             <a href="#">2</a>
+                        </li>
+                        <li>
+                             <a href="#">3</a>
+                        </li>
+                        <li>
+                             <a href="#">4</a>
+                        </li>
+                        <li>
+                             <a href="#">5</a>
+                        </li>
+                        <li>
+                             <a href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 {% endblock %}
