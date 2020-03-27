@@ -29,6 +29,7 @@ def kind(request,kind_name_slug):
         pages = PageF.objects.filter(kind=kind)
         context_dict['pages'] = pages
         context_dict['kind'] = kind
+        context_dict['kind_slug'] = kind_name_slug
     except KindF.DoesNotExist:
 
         pass

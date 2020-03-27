@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 
+{% block title %}Add a Lost_Kind{% endblock %}
+
 {% block body_block %}
 <br /><br /> <br /> <br /> <br />
-<form id="kind_form" method="post" action="/lost/add_kind/">
-
+    <form style="text-align:center" role="form"  id="kind_form" method="post" action="/lost/add_kind/">
+        <h2 class="form-signin-heading">Add a Lost Kind. </h2>
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
                 {{ hidden }}
@@ -12,10 +14,11 @@
 
             {% for field in form.visible_fields %}
                 {{ field.errors }}
-                {{ field.help_text }}
                 {{ field }}
             {% endfor %}
 
-            <input type="submit" name="submit" value="Create Kind" />
+    <br/><br/><br/>
+            <button class="btn btn-primary" type="submit" name="submit">Create Kind</button>
+
         </form>
 {% endblock %}

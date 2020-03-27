@@ -25,6 +25,7 @@ def kind(request,kind_name_slug):
     context_dict={}
     try:
         kind = KindL.objects.get(slug=kind_name_slug)
+        context_dict['kind_slug']=kind_name_slug
         context_dict['kind_name'] = kind.name
         pages = PageL.objects.filter(kind=kind)
         context_dict['pages'] = pages

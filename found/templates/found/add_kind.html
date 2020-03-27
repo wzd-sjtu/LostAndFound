@@ -2,9 +2,9 @@
 
 
 {% block body_block %}
-    <br /><br /> <br /> <br /> <br />
-<form id="kind_form" method="post" action="/found/add_kind/">
-
+<br /><br /> <br /> <br /> <br />
+    <form style="text-align:center" role="form"  id="kind_form" method="post" action="/found/add_kind/">
+        <h2 class="form-signin-heading">Add a Found Kind. </h2>
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
                 {{ hidden }}
@@ -12,10 +12,11 @@
 
             {% for field in form.visible_fields %}
                 {{ field.errors }}
-                {{ field.help_text }}
                 {{ field }}
             {% endfor %}
 
-            <input type="submit" name="submit" value="Create Found_Kind" />
+    <br/><br/><br/>
+            <button class="btn btn-primary" type="submit" name="submit">Create Kind</button>
+
         </form>
 {% endblock %}

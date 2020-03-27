@@ -41,9 +41,10 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url "index" %}">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/lost/">Lost </a></li>
+                    <li><a href="/found/">Found </a></li>
 
-                  {% if user.is_authenticated %}
                   <li><a href="logout/">Logout</a></li>
                   {% else %}
                   <li><a href="login/">Login</a></li>
