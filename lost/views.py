@@ -18,7 +18,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     kinds_list = KindL.objects.order_by('-likes')[:]
     context_dict = {'kinds': kinds_list}
-    return render(request, 'lost/index.html',context_dict)
+    return render(request, 'lost/index.html', context_dict)
 
 
 def kind(request,kind_name_slug):
