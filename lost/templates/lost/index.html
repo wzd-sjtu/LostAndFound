@@ -24,6 +24,24 @@
     </div>
     </div>
 
+    <script>
+        $(document).ready(
+            function(){
+                function refresh(){
+                    $.getJSON("data_fresh/",function(ret){
+                    $('#result1').html(ret.data1);
+                    $('#result2').html(ret.data2);
+                })
+                }
+                setInterval(refresh,3000)
+            }
+        )
+    </script>
+
+    <div id="result1">
+    </div>
+    <div id="result2">
+    </div>
 
     <div class="container">
 

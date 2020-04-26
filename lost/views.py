@@ -11,7 +11,17 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate, login,logout
 
 from django.contrib.auth.decorators import login_required
-
+from django.http import JsonResponse
+from django.core import serializers
+#  下面这一行是json数据的基本实现
+def data_fresh(request):
+    #  确实是动态返回了数据  但是有一个闪屏现象  体验和不好
+    a=serializers.serialize("xml",KindL.objects.all())
+    b=serializers.serialize("xml",PageL.objects.all())
+    context = {"data1":a,
+               "data2":b,
+               }
+    return JsonResponse(context)
 
 def index(request):
     kinds_list = KindL.objects.order_by('-likes')[:]
