@@ -1,11 +1,8 @@
 from django.db import models
 
-# Create your models here.
 
 from django.db import models
 from django.template.defaultfilters import slugify
-
-#   用户验证机制的引用包
 from django.contrib.auth.models import User
 # Create your models here.
 

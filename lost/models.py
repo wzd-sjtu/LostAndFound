@@ -8,7 +8,7 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 # Create your models here.
 
-# Create your models here.  //已经存在，不用更改
+# Create your models here.
 class KindL(models.Model):
     name = models.CharField(max_length=128, unique=True)
     views = models.IntegerField(default=0, unique=False)

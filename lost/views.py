@@ -13,8 +13,6 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 
 
-
-
 def index(request):
     kinds_list = KindL.objects.order_by('-likes')[:]
     context_dict = {'kinds': kinds_list}
@@ -36,14 +34,11 @@ def kind(request,kind_name_slug):
 
     return render(request, 'lost/kind.html', context_dict)
 
-
-
-
 def add_kind(request):
 
     if request.method == 'POST':
-        form = KindLForm(request.POST)#实例化表单数据，并且把表单实例对象传递给html页面
-        if form.is_valid():  #  一旦is_valid成功，就会保存输入的数据
+        form = KindLForm(request.POST)  #     实例化表单数据，并且把表单实例对象传递给html页面
+        if form.is_valid():             #  一旦is_valid成功，就会保存输入的数据
 
             form.save(commit=True)
             #  这里的save函数是在models里面存在的  把数据存储到数据库里面

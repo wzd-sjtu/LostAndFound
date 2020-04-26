@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from found.models import KindF,PageF
 from found.forms import KindFForm,PageFForm
-# Create your views here.
+
 from django.http import HttpResponse
 
 
@@ -31,9 +31,7 @@ def kind(request,kind_name_slug):
         context_dict['kind'] = kind
         context_dict['kind_slug'] = kind_name_slug
     except KindF.DoesNotExist:
-
         pass
-
     return render(request, 'found/kind.html', context_dict)
 
 
@@ -42,8 +40,8 @@ def kind(request,kind_name_slug):
 def add_kind(request):
 
     if request.method == 'POST':
-        form = KindFForm(request.POST)#实例化表单数据，并且把表单实例对象传递给html页面
-        if form.is_valid():  #  一旦is_valid成功，就会保存输入的数据
+        form = KindFForm(request.POST)      #      实例化表单数据，并且把表单实例对象传递给html页面
+        if form.is_valid():  #      一旦is_valid成功，就会保存输入的数据
 
             form.save(commit=True)
             #  这里的save函数是在models里面存在的  把数据存储到数据库里面
@@ -64,7 +62,7 @@ def add_page(request,kind_name_slug=None):
         cat = None
 
     if request.method == 'POST':
-        form = PageFForm(request.POST)#  实例化表单数据，并且把表单实例对象传递给html页面
+        form = PageFForm(request.POST)      #  实例化表单数据，并且把表单实例对象传递给html页面
         if form.is_valid():  #  一旦is_valid成功，就会保存输入的数据
             if cat:
                 page = form.save(commit=False)
