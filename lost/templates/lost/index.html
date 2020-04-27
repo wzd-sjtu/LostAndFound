@@ -23,8 +23,8 @@
 			</ul>
     </div>
     </div>
-
-    <script>
+    <!-- 去掉这个页面刷新函数 -->
+    <!--<script>
         $(document).ready(
             function(){
                 function refresh(){
@@ -37,14 +37,30 @@
             }
         )
     </script>
+    -->
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+        </script>
+
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#div1").load("make/");
+        });
+});
+
+</script>
+    <button>显示所有种类</button>
+    <div id="div1"><h2>点击按钮可以返回一定的内容</h2></div>
+
 
     <div id="result1">
     </div>
     <div id="result2">
     </div>
 
+    <!-- 下面是展示类别框框-->
+    <!--
     <div class="container">
-
 	<div class="row clearfix">
 		<div class="col-md-12 column">
                             <div class="row">
@@ -70,6 +86,7 @@
 	    </div>
     </div>
     </div>
+    -->
 
     <div style="text-align:center"> <img src="{% static "images/1.PNG" %}"  alt="Picture of Django" /></div>
         <li align="center" ><a href="/lost/add_kind/">Add a New Kind</a></li>

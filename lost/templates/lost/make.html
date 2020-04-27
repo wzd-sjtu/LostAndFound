@@ -1,0 +1,27 @@
+
+    <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+                            <div class="row">
+                            {% for kind in kinds %}
+                                                <div class="col-md-4">
+                                                    <div class="thumbnail">
+                                                        <img alt="300x200" src="/static/images/1.jpg" />
+                                                        <div class="caption">
+                                                            <h3>
+                                                                {{ kind.slug }}
+                                                            </h3>
+                                                            <p>{{ kind.name }}
+                                                            </p>
+                                                            <p>
+                                                                 <a class="btn btn-primary" href="kind/{{ kind.slug }}/">See</a> <a class="btn" href="kind/{{ kind.slug }}/">Action</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                            {% endfor %}
+                            </div>
+
+	    </div>
+    </div>
+    </div>
