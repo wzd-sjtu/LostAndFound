@@ -9,5 +9,5 @@ urlpatterns = [
     path('logout/',views.user_logout, name='logout'),
     #  可以通过name参数，来进行url映射，提高便捷性
     path('data_fresh/',views.data_fresh,name = 'data_fresh'),
-    path('make/',views.make,name="make")
+    path('make/<kind_name_slug>/',views.make,name="make")
 ]

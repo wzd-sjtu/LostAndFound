@@ -43,15 +43,20 @@
 
     <script>
     $(document).ready(function(){
-        $("button").click(function(){
-            $("#div1").load("make/");
+        var btn = document.getElementById("btn");
+        $(btn).click(function(){
+            var tmp_data = btn.innerHTML;
+            $("#div1").load("make/"+(tmp_data)+'/');
+            //  这里的标签完全可以修改成为之前dd里面的数据
+            //  这样就可以完成动态查找！ 对  只需要查找一个标签就可以！
         });
 });
 
 </script>
-    <button>显示所有种类</button>
-    <div id="div1"><h2>点击按钮可以返回一定的内容</h2></div>
-
+    {% for kind in kinds %}
+        <button  id="btn">{{ kind.slug }}</button>
+        <div id="div1"><h2></h2></div>
+    {% endfor %}
 
     <div id="result1">
     </div>
