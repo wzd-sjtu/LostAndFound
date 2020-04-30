@@ -22,10 +22,13 @@ def data_fresh(request):
                "data2":b,
                }
     return JsonResponse(context)
+
+
 def make(request,kind_name_slug):
     kinds_list = KindL.objects.filter(slug=kind_name_slug)
     context_dict = {'kinds':kinds_list}
     return render(request, 'lost/make.html', context_dict)
+
 
 def index(request):
     kinds_list = KindL.objects.order_by('-likes')[:]

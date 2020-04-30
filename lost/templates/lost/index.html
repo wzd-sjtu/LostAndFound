@@ -3,10 +3,6 @@
 
 
 {% block body_block %}
-
-
-
-
 <br /><br /> <br /> <br /> <br />
  <h1 align="center">Lost says...</h1>
     <div class ="top"  style="width: 100%;height: 80px;">
@@ -23,45 +19,38 @@
 			</ul>
     </div>
     </div>
-    <!-- 去掉这个页面刷新函数 -->
-    <!--<script>
-        $(document).ready(
-            function(){
-                function refresh(){
-                    $.getJSON("data_fresh/",function(ret){
-                    $('#result1').html(ret.data1);
-                    $('#result2').html(ret.data2);
-                })
-                }
-                setInterval(refresh,3000)
-            }
-        )
-    </script>
-    -->
-        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-        </script>
-
+<!--
     <script>
     $(document).ready(function(){
-        var btn = document.getElementById("btn");
+        var btn = document.getElementById("dd");
         $(btn).click(function(){
             var tmp_data = btn.innerHTML;
             $("#div1").load("make/"+(tmp_data)+'/');
             //  这里的标签完全可以修改成为之前dd里面的数据
             //  这样就可以完成动态查找！ 对  只需要查找一个标签就可以！
-        });
-});
+        });});
+    </script>
 
-</script>
     {% for kind in kinds %}
         <button  id="btn">{{ kind.slug }}</button>
         <div id="div1"><h2></h2></div>
     {% endfor %}
 
-    <div id="result1">
-    </div>
-    <div id="result2">
-    </div>
+<div id="box">
+	<dl>
+		<dt>类别</dt>
+		<dd>惠普</dd>
+		{% for kind in kinds %}
+            <dd> {{ kind.slug }}</dd>
+    {% endfor %}
+	</dl>
+
+	<dl class="select" style="border-bottom-width: 0px;">
+		<dt>已选条件：</dt>
+	</dl>
+</div>
+ -->
+
 
     <!-- 下面是展示类别框框-->
     <!--
@@ -93,6 +82,24 @@
     </div>
     -->
 
+    <div id="box">
+        <dl>
+            <dt>类别：</dt>
+            {% for kind in kinds %}
+                 <dd id="dd">{{kind.slug}}</dd>
+            {% endfor %}
+        </dl>
+        <dl class="select" style="border-bottom-width: 0px;">
+            <dt>已选条件：</dt>
+        </dl>
+    <br>
+
+    </div>
+    <div id="div1">
+
+    </div>
+
+
     <div style="text-align:center"> <img src="{% static "images/1.PNG" %}"  alt="Picture of Django" /></div>
         <li align="center" ><a href="/lost/add_kind/">Add a New Kind</a></li>
     <div align="center" class="row clearfix">
@@ -123,4 +130,5 @@
                 </div>
             </div>
 
+    <script src="/static/js/script.js"></script>
 {% endblock %}

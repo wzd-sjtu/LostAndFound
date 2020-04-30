@@ -1,0 +1,232 @@
+/*
+*  author: AUI
+*  base.css
+*  http://azenui.com/
+*  http://a-ui.cn/
+*/
+.aui-choice-screen {
+    width: 852px;
+    margin: 20px auto;
+    border: 1px solid #abbeef;
+}
+
+.aui-screen-list-box dl {
+    border-bottom: #abbeef 1px dashed;
+    width: 850px;
+    overflow: hidden;
+    height: 45px;
+    line-height: 45px;
+}
+
+.aui-screen-list-box dl dt {
+    float: left;
+    height: 30px
+}
+
+.aui-screen-list-box dl dt {
+    text-align: right;
+    width: 90px;
+    height: 45px;
+    font-weight: 600;
+    line-height: 45px;
+}
+
+.aui-screen-list-box dl dd {
+    position: relative;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    width: 750px;
+    float: left;
+    height: 45px;
+    overflow: hidden;
+    padding-top: 0px;
+    line-height: 45px;
+}
+
+.aui-screen-list-box dl dd a {
+    line-height: 14px;
+    display: inline-block;
+    color: #4284d9;
+    overflow: hidden;
+    text-decoration: none;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+    margin-top: 8px;
+}
+
+.aui-screen-list-box dl dd a:hover {
+    background: #39c;
+    color: #fff
+}
+
+.aui-screen-list-box dl dd a.selected {
+    background: #4284d9;
+    color: #fff;
+}
+
+.aui-screen-list-box dl dd span.more {
+    position: absolute;
+    width: 39px;
+    display: block;
+    height: 14px;
+    top: 6px;
+    cursor: pointer;
+    right: 1px
+}
+
+.aui-screen-list-box dl dd span.more label {
+    display: inline-block;
+    cursor: pointer
+}
+
+.aui-screen-head-choice {
+    border-bottom: #abbeef 1px solid;
+    width: 850px;
+    overflow: hidden;
+    height: 35px;
+    line-height: 22px;
+}
+
+.aui-screen-head-choice dl {
+    width: 850px;
+    background: #f6f8fd;
+    overflow: hidden;
+}
+
+.aui-screen-head-choice dl dt {
+    float: left
+}
+
+.aui-screen-head-choice dl dd {
+    float: left
+}
+
+.aui-screen-head-choice dl dt {
+    text-align: right;
+    line-height: 35px;
+    width: 90px;
+    height: 35px;
+    font-weight: 600;
+}
+
+.aui-screen-head-choice dl dd {
+    padding-bottom: 4px;
+    width: 740px;
+    padding-top: 2px;
+}
+
+.aui-selected-info {
+    border:1px solid #f60;
+    position: relative;
+    padding-bottom: 1px;
+    margin: 4px 5px 0 0;
+    padding-left: 5px;
+    padding-right: 20px;
+    display: block;
+    white-space: nowrap;
+    background: #fff;
+    float: left;
+    height: 23px;
+}
+
+.aui-selected-info label {
+    color: #f60
+}
+
+.aui-selected-info span {
+    font-size: 12px;
+}
+
+.aui-eliminate {
+    line-height: 22px;
+    margin-top: 4px;
+    width: 80px;
+    float: left;
+    color: #f60;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.aui-selected-info em {
+    background: url("../img/close.png") no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 13px;
+    overflow: hidden;
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    background-size: 12px;
+    width: 13px;
+}
+
+.aui-sr-input {
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    float: right;
+    padding-top: 5px;
+    color: #999;
+    padding-right: 10px;
+}
+
+.aui-sr-input input {
+    width: 42px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    padding: 0;
+    color: #222;
+}
+
+.aui-sr-input button {
+    color: #fff;
+    background: #4284d9;
+    height: 25px;
+    line-height: 25px;
+    width: 40px;
+    text-align: center;
+    margin-left: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+}
+
+.aui-list-pz-size {
+    float: left;
+    padding-top: 8px;
+    width: 820px;
+    height: auto;
+}
+
+.aui-list-pz-size li {
+    float: left;
+    width: 134px;
+    padding-bottom: 5px;
+    color: #3b5998;
+    height: 29px;
+    line-height: 29px;
+}
+
+.aui-screen-list-box .aui-aui-screen-list-item {
+    height: 100px;
+    border-bottom: none;
+}
+
+.aui-screen-list-box .aui-aui-screen-list-item dd {
+    height: 100px;
+    overflow: hidden;
+}
+
+.aui-list-pz-size li label {
+    color: #4284d9;
+}
+
+.aui-list-pz-size li label input {
+    margin-right: 3px;
+}
